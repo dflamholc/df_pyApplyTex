@@ -15,7 +15,13 @@ def checkName(obj, matList):
         matNames.append(mName)
 
     if objName in matNames:
-        print "Lets apply some tags!"
+        # print "Lets apply some tags!"
+        tags = obj.GetTags()
+        for tag in tags:
+            Tagtype = tag.GetTypeName()
+            if Tagtype == "UVW":
+
+                print "found a UVW tag"
         # check if there is already a material with that name
         # if not then apply the material
         # check if an ojbect has a UVW tag
@@ -58,7 +64,6 @@ def main():
     
     # call the recursive function with callback
     recurseObjs(obj, checkName, matList)
-
 
 
 if __name__=='__main__':
