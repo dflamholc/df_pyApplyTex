@@ -60,7 +60,7 @@ def checkName(obj, matList):
                 doc.AddUndo(c4d.UNDOTYPE_NEW, texTag)
 
         except:
-            pass
+            raise StopIteration
     else:
         print "Texture Not Found!"
 
